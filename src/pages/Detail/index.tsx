@@ -46,7 +46,7 @@ const Detail: React.FC = ({navigation}:any) => {
           Nike Shox 10
         </Text>
         <Text style={styles.textContent}>
-          O Tênis Nike Shox 10 traz amortecimento e suporte para garantir uma melhor performace nos treinamentos
+          O Tênis Nike Shox 10 traz amortecimento e suporte para garantir uma melhor performance nos treinamentos
         </Text>
         <Text style={styles.textList}>
           - Categorias: Amortecimento
