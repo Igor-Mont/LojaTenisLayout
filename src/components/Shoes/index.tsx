@@ -2,13 +2,15 @@ import React, { ReactNode } from 'react';
 import { Image ,View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import img1 from '../../assets/1.png';
 
+
 type ShoesProps = {
   cost: number,
   children: ReactNode,
   name: string,
+  onClick?: () => void
 }
 
-function Shoes({ cost, name, children }: ShoesProps): JSX.Element {
+function Shoes({ cost, name, children, onClick }: ShoesProps): JSX.Element {
   const filterDesc = (desc: string) => {
     if(desc.length < 27) {
       return desc;
@@ -18,7 +20,7 @@ function Shoes({ cost, name, children }: ShoesProps): JSX.Element {
   }
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onClick} style={styles.container}>
       {children}
       <Text style={styles.shoesText}>
         {filterDesc(name)}
@@ -32,7 +34,7 @@ function Shoes({ cost, name, children }: ShoesProps): JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: '25%',
+    paddingVertical: '2%',
     justifyContent: 'center',
     alignItems: 'center'
   },

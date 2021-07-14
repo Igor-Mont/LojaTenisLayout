@@ -10,8 +10,10 @@ import img3 from '../../assets/3.png';
 import img4 from '../../assets/4.png';
 import img5 from '../../assets/5.png';
 import img6 from '../../assets/6.png';
+import { useNavigation } from '@react-navigation/native'
 
 const Home: React.FC = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -39,15 +41,45 @@ const Home: React.FC = () => {
         <Text style={styles.text}>LANÇAMENTOS</Text>
 
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-          <Shoes cost={190.99} name="Nike Shox 10">
+          <Shoes onClick={() => navigation.navigate('Detail')} cost={190.99} name="Nike Shox 10">
             <Image
               source={img1}
               style={styles.shoesImg}
             />
           </Shoes>
-          <Shoes cost={190.99} name="Nike Precision 21">
+          <View>
+            <Shoes cost={190.99} name="Nike Preciox 2">
+              <Image
+                source={img2}
+                style={styles.shoesImg}
+              />
+            </Shoes>
+          </View>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+          <Shoes cost={190.99} name="Nike Shox 10">
             <Image
-              source={img2}
+              source={img3}
+              style={styles.shoesImg}
+            />
+          </Shoes>
+          <Shoes cost={190.99} name="Nike Air Max 2">
+            <Image
+              source={img4}
+              style={styles.shoesImg}
+            />
+          </Shoes>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+          <Shoes cost={190.99} name="Nike Preciss 10">
+            <Image
+              source={img5}
+              style={styles.shoesImg}
+            />
+          </Shoes>
+          <Shoes cost={190.99} name="Nike Dev 2">
+            <Image
+              source={img6}
               style={styles.shoesImg}
             />
           </Shoes>
